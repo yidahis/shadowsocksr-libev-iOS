@@ -467,6 +467,10 @@ setting up your server's firewall rules to limit connections from each user:
 
     # Up to 32 connections are enough for normal usage
     iptables -A INPUT -p tcp --syn --dport ${SHADOWSOCKS_PORT} -m connlimit --connlimit-above 32 -j REJECT --reject-with tcp-reset
+    
+##重点
+./configure --disable-documentation --prefix=/Users/yiwanjun/ywj/shadowsocksr-libev/build --host=arm-apple-darwin CC=" xcrun -sdk iphoneos clang -arch arm64" --with-pcre=/Users/yiwanjun/Downloads/tmp/pcre --with-openssl=/Users/yiwanjun/Downloads/github/OpenSSL-for-iPhone/bin/iPhoneOS11.2-arm64.sdk
+pcre和openssl  需要自己编译响应架构版本
 
 ## License
 
